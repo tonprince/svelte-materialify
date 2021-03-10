@@ -11,16 +11,17 @@ related:
   import Playground from '@/playground/Icon.svelte';
 </script>
 
-<svelte:head>
-
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
-</svelte:head>
-
 # Icons
 
-The `Icon` component provides a large set of glyphs to provide context to various aspects of your application. We recommend the official [Material Design Icons](https://materialdesignicons.com/) page. To use any of these icons simply use the mdi- prefix followed by the icon name.
+The `Icon` component allows to provide visual context to various aspects of your application. It is iconset agnostic, so you can use any icon from any vendor you like.
+
+<Components.Alert type="info">
+It's best to use a library which just exports SVG path data, instead of a webfont.
+</Components.Alert>
+
+We recommend the @mdi/js library:
+`npm install @mdi/js`
+See: [Material Design Icons](https://materialdesignicons.com/).
 
 ## Playground
 
@@ -36,9 +37,9 @@ Icons come in two themes (light and dark), and can have any size.
 
 Below is a collection of simple to complex examples.
 
-### Types of Icons
+### Icon size and spinning
 
-The `Icon` component is iconset agnostic, you can use any icon from any vendor you like. Just include thier icon font file if you want to use them.
+You can specify icon size and if the icon should spin.
 <Components.Example file="Icon/types" />
 
 ### Color
@@ -46,10 +47,21 @@ The `Icon` component is iconset agnostic, you can use any icon from any vendor y
 Using color helpers you can change the color of an icon from the standard dark and light themes.
 <Components.Example file="Icon/color" />
 
-### SVG
+### Icon Font File
 
-You can easily use SVG icons instead of icon fonts.
-<Components.Example file="Icon/svg" />
+If you really need to, you can easily use Icon font files instead of SVGs.
+For example, with `mdi` or `fa` webfonts:
+
+```html
+<div class="d-flex justify-space-between">
+  <Icon class="mdi mdi-home" />
+  <Icon spin class="mdi mdi-refresh" />
+  <Icon class="fa fa-award" />
+  <Icon class="fa fa-camera" />
+</div>
+```
+
+(We haven't imported these font files, because the site would get bloated by them.)
 
 ### Disabled
 

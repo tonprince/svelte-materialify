@@ -6,6 +6,7 @@
     NavigationDrawer,
     Overlay,
   } from 'svelte-materialify/src';
+  import { mdiMenu } from '@mdi/js';
 
   let active = false;
   function toggleNavigation() {
@@ -17,11 +18,11 @@
   <AppBar>
     <div slot="icon">
       <Button fab depressed on:click={toggleNavigation}>
-        <Icon class="mdi mdi-menu" />
+        <Icon path={mdiMenu} />
       </Button>
     </div>
     <span slot="title"> Click The Menu </span>
   </AppBar>
-  <NavigationDrawer absolute {active}>Content</NavigationDrawer>
+  <NavigationDrawer style="position: relative" {active}>Content</NavigationDrawer>
   <Overlay {active} absolute on:click={toggleNavigation} index={1} />
 </div>

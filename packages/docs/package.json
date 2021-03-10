@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "private": true,
   "scripts": {
     "dev": "sapper dev --ext \".svelte .md\"",
@@ -8,13 +8,14 @@
     "preview": "serve __sapper__/export"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@mdi/js": "^5.9.55",
     "compression": "^1.7.1",
     "gumshoejs": "^5.1.2",
     "polka": "next",
     "sirv": "^1.0.11",
-    "svelte-materialify": "^0.3.5",
-    "svelte-materialify-api": "^0.3.5"
+    "svelte-materialify": "^0.3.6",
+    "svelte-materialify-api": "^0.3.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",

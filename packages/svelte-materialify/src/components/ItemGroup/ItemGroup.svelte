@@ -26,14 +26,16 @@
     select: (val) => {
       if (multiple) {
         if (value.includes(val)) {
-          if (!(mandatory && value === 1)) {
+          if (!mandatory || value.length > 1) {
             value.splice(value.indexOf(val), 1);
             value = value;
           }
         } else if (value.length < max) value = [...value, val];
       } else if (value === val) {
         if (!mandatory) value = null;
-      } else value = val;
+      } else if (typeof (val) === 'number') {
+        value = val;
+      } else value = [val];
     },
     register: (setValue) => {
       const u = valueStore.subscribe((val) => {

@@ -1,6 +1,6 @@
 <script>
-  import Breadcrumbs from 'svelte-materialify/src/components/Breadcrumbs';
-  import Icon from 'svelte-materialify/src/components/Icon';
+  import { Breadcrumbs, Icon } from 'svelte-materialify/src';
+  import { mdiArrowRightBold } from '@mdi/js';
 
   const items = [
     { text: 'Dashboard', href: '/components/breadcrumbs/' },
@@ -15,6 +15,6 @@
 
 <Breadcrumbs {items}>
   <div slot="divider">
-    <Icon class="mdi mdi-arrow-right-bold" />
+    <Icon path={mdiArrowRightBold} />
   </div>
 </Breadcrumbs>
