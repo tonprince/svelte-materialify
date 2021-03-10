@@ -41,11 +41,13 @@
         {outlined}
         {solo}
         {dense}
+        {clearable}
         {disabled}
         value={format(value)}
         {placeholder}
         {hint}
-        readonly>
+        readonly
+        on:change>
         <slot slot="prepend-outer" name="prepend-outer" />
 
         <slot />
@@ -60,6 +62,7 @@
         </div>
         <span slot="append">
           <Icon path={DOWN_ICON} rotate={active ? 180 : 0} />
+          <slot name="append" />
         </span>
         <slot slot="append-outer" name="append-outer" />
       </TextField>
